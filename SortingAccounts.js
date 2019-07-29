@@ -1,11 +1,18 @@
+class Account{
+	constructor(credit, debit, accountNumber){
+	this.credit = credit,
+	this.debit = debit,
+	this.accountNumber = accountNumber
+	}
+}
 var accounts = [];
 for(i = 0; i < 30; i++){
 	if(i % 3 == 0){
-		accounts[i] = {credit:generateRandomNumber(),debit:generateRandomNumber(), accountNumber:i};
+		accounts.push(new Account (generateRandomNumber(), generateRandomNumber(), i));
 	}else if (i % 3 == 1){
-		accounts[i]= {credit:null, debit: generateRandomNumber(),accountNumber:i};
+		accounts.push(new Account (null, generateRandomNumber(), i));
 	}else{
-		accounts[i] = {credit:null,debit:null, accountNumber:i};
+		accounts.push(new Account (null, null, i));
 	}
 }
 function generateRandomNumber(){
